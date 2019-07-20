@@ -1,0 +1,20 @@
+{
+  "name": "webglass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^4.0.0"
+  },
+  "dependencies": {
+    "electron-debug": "^2.0.0",
+    "sha256": "^0.2.0",
+    "uuid": "^3.3.2",
+    "ws": "^6.0.0"
+  }
+}
