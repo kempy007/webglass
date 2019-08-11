@@ -119,7 +119,8 @@ function StreamClient(config) {
     console.log("Stream open...")
     let that = this;
     this.offerOptions = {}
-    this.peer = new RTCPeerConnection(null);
+    this.peer = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]});
+    this.peer.setConfiguration({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]});  
     this.peer.onicecandidate = function(e) {that.icecandidates.push(e.candidate);}
     this.sdp = null;
     this.icecandidates = [];
