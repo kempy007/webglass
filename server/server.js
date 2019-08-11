@@ -18,9 +18,10 @@ class WindowStreamer extends EventEmitter {
             offerToReceiveAudio: 1,
             offerToReceiveVideo: 1
         }
-        this.peer = new RTCPeerConnection(null); 
         this.sdp = null;
         this.icecandidates = [];
+        this.peer = new RTCPeerConnection( { iceServers: [ {urls: 'stun:stun.l.google.com:19302'} ] } );
+        this.peer.setConfiguration( { iceServers: [ {urls: 'stun:stun.l.google.com:19302'} ] } );
         let that = this;
         desktopCapturer.getSources({types: ['window', 'screen']}, (error, sources) => {
             ipcRenderer.send('async', JSON.stringify('Entered Desktop Capturer'));
